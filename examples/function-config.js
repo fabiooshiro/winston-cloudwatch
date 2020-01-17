@@ -1,5 +1,5 @@
 var winston = require('winston');
-    WinstonCloudwatch = require('../index'),
+    WinstonCloudWatch = require('../index'),
     crypto = require('crypto');
 
 // Give ourselves a randomized (time-based) hash to append to our stream name
@@ -14,7 +14,7 @@ winston.loggers.add('access-log', {
       colorize: true,
       level: 'info'
     }),
-    new WinstonCloudwatch({
+    new WinstonCloudWatch({
       logGroupName: 'app-name',
       logStreamName: function() {
         // Spread log streams across dates as the server stays up
